@@ -1,0 +1,62 @@
+/* Animora Design Tokens — warm boutique aesthetic inspired by CozyCornerForU */
+:root {
+  /* Surfaces */
+  --bg-page: #ffffff;
+  --bg-cream: #fffdf7;
+  --bg-parchment: #f5ede0;
+  --bg-parchment-deep: #ede2d0;
+  --bg-ink: #1a1a12;
+
+  /* Typography colors */
+  --text-ink: #1a1a12;
+  --text-body: #3a3a32;
+  --text-muted: #55554e;
+  --text-subtle: #66665e;
+  --text-on-ink: #fef9ef;
+
+  /* Pastel & Playful Accents */
+  --accent-butter: #ffe66d;
+  --accent-butter-hover: #ffd93d;
+  --accent-matcha: #9ee37d;
+  --accent-matcha-hover: #8cd36b;
+  --accent-matcha-ink: #2b5420;
+  --accent-blush: #ffb6c1;
+  --accent-blush-hover: #ffa0b0;
+  --accent-sky: #aee5ff;
+  --accent-lavender: #d2c4fb;
+  --accent-peach: #ffc899;
+  --accent-ribbon-pink: #ff6b9d;
+
+  /* Borders & Dividers */
+  --border-subtle: #e8e4dc;
+  --border-ink-thin: 2px solid var(--bg-ink);
+  --border-ink: 2.5px solid var(--bg-ink);
+  --border-ink-thick: 3px solid var(--bg-ink);
+
+  /* Hard Offset Boutique Shadows */
+  --shadow-xs: 2px 2px 0 var(--bg-ink);
+  --shadow-sm: 3px 3px 0 var(--bg-ink);
+  --shadow-card: 4px 4px 0 var(--bg-ink);
+  --shadow-lg: 6px 6px 0 var(--bg-ink);
+
+  /* Typography */
+  --font-display: 'Fredoka', ui-rounded, system-ui, sans-serif;
+  --font-sans: 'Archivo', system-ui, -apple-system, sans-serif;
+  --font-hand: 'Caveat', cursive;
+
+  /* Radii */
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --radius-pill: 9999px;
+
+  /* Layout & Spacing */
+  --container-max: 1180px;
+  --nav-height: 68px;
+  --section-py: 4.75rem;
+
+  /* Motion */
+  --ease-cozy: cubic-bezier(0.22, 1, 0.36, 1);
+  --t-fast: 160ms;
+  --t-base: 220ms;
+}
