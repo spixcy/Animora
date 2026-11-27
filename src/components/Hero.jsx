@@ -12,8 +12,10 @@ export function Hero({ onJumpToAnimations }) {
           <p className="hero-kicker">Handcrafted UI atelier ✦ Cozy digital goods</p>
 
           <h1 className="hero-title">
-            We craft{' '}
-            <span className="hero-cozy-badge">cozy</span>{' '}
+            We craft
+            <br />
+            <span className="hero-cozy-badge">cozy</span>
+            <br />
             UI pieces.
           </h1>
 
