@@ -15,8 +15,15 @@ export function Navbar({
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') setMenuOpen(false);
+    };
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener('keydown', onKeyDown);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('keydown', onKeyDown);
+    };
   }, []);
 
   const handleLinkClick = (item) => {
@@ -94,8 +101,48 @@ export function Navbar({
       </div>
 
       {menuOpen && (
-        <div className="mobile-drawer">
-          <div className="container mobile-drawer-inner">
+        <div
+          className="mobile-drawer"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Mobile navigation menu"
+        >
+          <div className="mobile-drawer-top">
+            <button
+              type="button"
+              className="mobile-close-btn"
+              aria-label="Close navigation menu"
+              onClick={() => setMenuOpen(false)}
+            >
+              <MenuIcon open />
+            </button>
+          </div>
+
+          <nav className="mobile-drawer-nav" aria-label="Mobile navigation">
+            <div className="mobile-links">
+              {NAV_LINKS.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className={`mobile-link ${item.highlight ? 'mobile-link--highlight' : ''}`}
+                  onClick={() => handleLinkClick(item)}
+                >
+                  <span>{item.label}</span>
+                  {item.highlight && <SquiggleLine width={84} />}
+                </a>
+              ))}
+            </div>
+
+            <hr className="mobile-divider" />
+
+            <a
+              href="#collections"
+              className="mobile-link"
+              onClick={() => setMenuOpen(false)}
+            >
+              Studio
+            </a>
+
             <label className="mobile-search" aria-label="Search UI resources">
               <SearchIcon />
               <input
@@ -105,19 +152,7 @@ export function Navbar({
                 onChange={(e) => onSearchChange(e.target.value)}
               />
             </label>
-            <div className="mobile-links">
-              {NAV_LINKS.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  className="mobile-link"
-                  onClick={() => handleLinkClick(item)}
-                >
-                  {item.label}
-                </a>
-              ))}
-            </div>
-          </div>
+          </nav>
         </div>
       )}
     </header>
