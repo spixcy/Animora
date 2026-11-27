@@ -51,7 +51,7 @@
   --radius-pill: 9999px;
 
   /* Layout & Spacing */
-  --container-max: 1180px;
+  --container-max: min(1480px, 96vw);
   --nav-height: 68px;
   --section-py: 4.75rem;
 

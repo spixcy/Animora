@@ -61,7 +61,7 @@ a {
   width: 100%;
   max-width: var(--container-max);
   margin: 0 auto;
-  padding-inline: 1.5rem;
+  padding-inline: 2.5rem;
 }
 
 /* Shared Cozy Typography & Surface Primitives */
